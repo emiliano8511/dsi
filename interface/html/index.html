@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../scripts/jquery-1.7.1.min.js" type="text/javascript"></script>	
+	<script src="../scripts/AjaxUpload.2.0.min.js" type="text/javascript"></script>	
+	<script src="../scripts/idiomas.js" type="text/javascript"></script>
+	<script src="../scripts/subir_archivo.js" type="text/javascript"></script>
+	<script src="../scripts/menu.js" type="text/javascript"></script>
+	<script src="../scripts/orden_trabajo.js" type="text/javascript"></script>
+    <script src="../scripts/ingresotraduc.js" type="text/javascript"></script>
+    <script src="../scripts/borrartraduc.js" type="text/javascript"></script>
+	
+	
+	
+	
+</head>
+<body>
+
+<table border="1" width="100%">
+	<tr>
+		<td align="center">Menu</td>
+	</tr>
+</table>
+
+<table border="1" width="100%">
+	<tr>
+		<td align="center">Clientes</td>
+		<td align="center">Traductor</td>
+		<td align="center">Administrador</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<input type='button' value='Crear Proyecto' onclick="ocultar_todo();document.getElementById('crear_proyecto').style.display = 'block';"/></br>
+			<input type='button' value='Ver historial de solicitudes' onclick="ocultar_todo();document.getElementById('ver_proyectos_cliente').style.display = 'block';"/></br>
+		</td>
+		<td align="center">
+			<input type='button' value='Cotizar Solicitudes'/></br>
+			<input type='button' value='Ordenes de trabajo'/></br>
+			<input type='button' value='Modificar disponibilidad horaria'/></br>
+			<input type='button' value='Ver registro de trabajos'/></br>	
+		</td>
+		<td align="center">
+        <!-- COdigo con emiliano  -->
+			<input type='button' value='Ingresar o eliminar un Usuario' onClick="ocultar_todo();document.getElementById('IngresarUsuarios').style.display='block';" /></br>
+        <!-- COdigo con lilo  -->  
+			<input type='button' value=' Marcar Proyecto como Realizado.' onClick="ocultar_todo(); document.getElementById('EliminarPoC').style.display='block'; "/></br>
+
+            <input type='button' value=' Marcar Proyecto como Realizado.' onClick="ocultar_todo(); document.getElementById('EliminarPoC').style.display='block'; "/></br>
+
+		  <input type='button' value='Editar un proyecto marcándolo como pagado (clientes)'/></br>
+			<input type='button' value='Editar un proyecto marcándolo como pagado (traductores.)'/></br>			
+			<input type='button' value='Ver registros de los trabajos.'/></br>
+		</td>
+	</tr>
+</table>
+</br></br>
+
+<!--   Orden de trabajo por parte del cliente -->								
+<div id="crear_proyecto" style="display: none;">	
+	<center>
+		Crear proyecto
+		<table>
+			<tr>
+				<td valign="center"> 				
+				<div id="upload_button"><input type="button" value="Subir Archivo" id="up" style='width: 150px;'/></div>
+				<div id="upload_button2"><input type="button" value="Subir Archivo" id="up2" style='width: 150px;'/></div>
+				<div id="upload_button3"><input type="button" value="Subir Archivo" id="up3" style='width: 150px;'/></div>				
+				</td>
+				<td>
+				<table align="center">
+					<tr>
+						<form>				
+							<td> Idioma Origen: </td>
+							<td><select id="idioma_origen"> 
+												<option value="0" selected="selected">Elija Idioma</option>
+								</select>
+							</td>	
+						</form>
+					</tr>
+					<tr>
+						<form>
+							<td>Idioma Destino: </td>
+							<td><select id="idioma_destino"> 
+												<option value="0" selected="selected">Elija Idioma</option>
+								</select>
+							</td>	
+						</form>
+					</tr>									
+				</table>
+				</td>									
+			</tr>
+		</table>
+		</br>
+		<input type="button" value="Generar Orden" id="generar_orden" onclick="generar_orden();" style='width: 150px;'/>
+	</center>	
+</div>
+
+<!--   Ver historial proyectos, cliente -->								
+<div id="ver_proyectos_cliente" style="display: none;">	
+	<center>
+		Historial de Proyectos</br>
+		<input type="button" value="Generar Orden" onclick="ver_historial_cliente();" style='width: 150px;'/>
+		<div id="proyectos"></div>
+	</center>
+    
+    	
+</div>
+
+<div id="IngresarUsuarios" style="display: none;">
+
+
+<!-- COdigo con emiliano  -->
+
+Nombre:</br> <input type="text" id="NombreTraductor" /></br>   
+Rut:</br> <input type="text" id="RutTraductor" /></br> 
+Mail:</br> <input type="text" id="MailTraductor" /></br> 
+Clave: </br> <input type="password" id="ClaveTraductor" /></br> 
+
+<input type="button" value="Ingresar" onclick="ingresar_traductor();" /></br> 
+
+<!-- Para esta funcion solo nesesito  1 dato.  -->
+<input type="button" value="Eliminar" onclick="eliminar_traductor();" /></br> 
+
+</div>
+
+<div id="EliminarPoC" style="display: none;">
+  <p>7  </p>
+  <p>
+
+    <input type="button" value="Eliminar" onclick="eliminar_traductor();" />
+  </p>
+  </br> 
+
+</div>
+
+</body>
+</html>
+
+
+
+
