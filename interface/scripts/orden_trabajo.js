@@ -74,12 +74,12 @@ function ver_historial_cliente()
 	{		
 		if (xmlhttp.readyState==4 && xmlhttp.status==200)
 		{							
-			var r = xmlhttp.responseText;									
+			var r = xmlhttp.responseText;												
 			var n= r.split("<id>");
 			var nproyectos = n.length -1;
 			var i = 0;			
 			var nombre,i1,i2,p,e,o;
-			var mensaje="<table border='1' width='100%'>";
+			var mensaje="<table class='table1' border='1' width='100%'>";			
 			mensaje +='<tr align="center"><td>Id Proyecto</td><td>Fecha Entrega</td><td>Precio</td><td>Nombre</td><td>Idioma Original</td><td>Idioma Destino</td><td>Precio</td><td>Estado</td><td>Opcion</td></tr>'
 			
 			while (i != nproyectos)

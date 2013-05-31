@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href='../css/tablas.css' rel='stylesheet' type='text/css'>
+	
 	<script src="../scripts/jquery-1.7.1.min.js" type="text/javascript"></script>	
 	<script src="../scripts/AjaxUpload.2.0.min.js" type="text/javascript"></script>	
 	<script src="../scripts/idiomas.js" type="text/javascript"></script>
@@ -31,7 +33,7 @@
 	<tr>
 		<td align="center">
 			<input type='button' value='Crear Proyecto' onclick="ocultar_todo();document.getElementById('crear_proyecto').style.display = 'block';"/></br>
-			<input type='button' value='Ver historial de solicitudes' onclick="ocultar_todo();document.getElementById('ver_proyectos_cliente').style.display = 'block';"/></br>
+			<input type='button' value='Ver historial de solicitudes' onclick="ocultar_todo();document.getElementById('ver_proyectos_cliente').style.display = 'block';ver_historial_cliente();"/></br>
 		</td>
 		<td align="center">
 			<input type='button' value='Cotizar Solicitudes'/></br>
@@ -58,7 +60,7 @@
 <!--   Orden de trabajo por parte del cliente -->								
 <div id="crear_proyecto" style="display: none;">	
 	<center>
-		Crear proyecto
+		Crear proyecto</br></br>
 		<table>
 			<tr>
 				<td valign="center"> 				
@@ -98,8 +100,7 @@
 <!--   Ver historial proyectos, cliente -->								
 <div id="ver_proyectos_cliente" style="display: none;">	
 	<center>
-		Historial de Proyectos</br>
-		<input type="button" value="Generar Orden" onclick="ver_historial_cliente();" style='width: 150px;'/>
+		Historial de Proyectos</br></br>		
 		<div id="proyectos"></div>
 	</center>
     
