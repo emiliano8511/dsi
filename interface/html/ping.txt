@@ -1,1 +1,1 @@
-1Lala
+Podrias agregar las modificaciones a la BDD plz =) .txt   por ultimo yo me las arreglo para meterla a postgres
