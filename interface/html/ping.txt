@@ -1,1 +1,67 @@
-Podrias agregar las modificaciones a la BDD plz =) .txt   por ultimo yo me las arreglo para meterla a postgres
+CREATE TABLE categoria
+(
+id serial NOT NULL,
+nombre character varying
+);
+
+CREATE TABLE cliente
+(
+id_cliente serial NOT NULL,
+nombre character varying,
+contacto character varying,
+mail character varying,
+clave character varying
+);
+
+CREATE TABLE documentos
+(
+id serial NOT NULL,
+id_proyecto integer,
+nombre_documento character varying,
+idioma_original integer,
+idioma_destino integer,
+precio integer,
+id_traductor integer,
+estado character varying,
+id_categoria integer,
+pagado boolean,
+id_corrector integer
+);
+
+CREATE TABLE estado
+(
+id serial NOT NULL,
+nombre character varying
+);
+
+CREATE TABLE idioma
+(
+id serial NOT NULL,
+id_idiomas integer,
+id_traductor integer,
+id_categoria integer
+);
+
+CREATE TABLE idiomas
+(
+id serial NOT NULL,
+nombre character varying
+);
+
+CREATE TABLE proyecto
+(
+id_proyecto serial NOT NULL,
+fecha_entrega date,
+precio integer,
+correo_cliente character varying,
+estado character varying
+);
+
+CREATE TABLE traductor
+(
+nombre character varying,
+rut character varying,
+mail character varying,
+clave character varying,
+id serial NOT NULL
+)

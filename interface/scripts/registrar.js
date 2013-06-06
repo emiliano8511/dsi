@@ -32,8 +32,7 @@ function registrar_usuario()
 		{		
 			if (xmlhttp.readyState==4 && xmlhttp.status==200)
 			{							
-				var r = xmlhttp.responseText;
-				alert (r);
+				var r = xmlhttp.responseText;				
 				if (r == "error")
 				{
 					alert ("Existe una cuenta con el mismo correo, error");
