@@ -15,6 +15,7 @@ $filas=pg_numrows($consulta);
 if ($filas == 1)
 {
 	$_SESSION['mail'] = $mail;		
+	$_SESSION['usuario'] = 'cliente';		
 	echo "exito";
 }
 else

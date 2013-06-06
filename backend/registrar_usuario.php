@@ -21,6 +21,7 @@ if ($filas == 0)
 	echo "ok";
 	$_SESSION['mail'] = $mail;	
 	$_SESSION['nombre'] = $nombre;	
+	$_SESSION['usuario'] = 'cliente';		
 	mkdir("../usuarios/".$mail);
 }
 else
