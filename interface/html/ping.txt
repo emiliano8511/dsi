@@ -63,5 +63,6 @@ nombre character varying,
 rut character varying,
 mail character varying,
 clave character varying,
-id serial NOT NULL
+id serial NOT NULL,
+admin boolean
 )
