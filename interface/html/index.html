@@ -44,9 +44,7 @@
 		<li><a href="#" onclick="ocultar_todo();document.getElementById('holaadmin').style.display = 'block';">Menu Administrador:</a>
 		<li><a href='#' onClick="ocultar_todo();document.getElementById('IngresarUsuarios').style.display='block';">Ingresar Traductor </a>
 		<li><a href='#'onClick="ocultar_todo(); document.getElementById('EliminarTraduc').style.display='block'; "> Eliminar Traductor</a>
-		<li><a href='#' onClick="ocultar_todo();
-        
-document.getElementById('EliminarPoC').style.display='block'; ">Marcar Proyecto como Realizado</a>
+		<li><a href='#' onClick="ocultar_todo(); document.getElementById('EliminarPoC').style.display='block'; ">Marcar Proyecto como Realizado</a>
 		<li><a href='#'>Marcar un proyecto pagado por Clientes</a>
 		<li><a href='#'>Marcar un proyecto pagado por Clientes Proyecto Pagado a Traductores</a>
 		<li><a href='#'>Ver Registros</a>		        		  
@@ -144,17 +142,17 @@ document.getElementById('EliminarPoC').style.display='block'; ">Marcar Proyecto 
 <td>Clave:</td><td><input type="password" id="ClaveTraductor" /><td> 
 </tr>
 <tr>
-<td>¿Privilegios de adminitrador ?:</td><td> <form id=checkbox>
+<td>¿Privilegios de adminitrador ?:</td><td> <form name=myform>
 <select name=mytextarea>
-<option name=TRUE value=TRUE> Si </option>
-<option name=FALSE value=FALSE> No </option>
-
+<option name=one value=TRUE>SI</option>
+<option name=two value=FALSE>NO</option>
 </select>
+
 
 </form><td> 
 </tr>
 <tr>
-<td align="right"><input type="button" value="Ingresar" onclick="ingresar_traductor();" /></td><td> 
+<td align="right"><input type="button" value="Ingresar" onclick="ingresar_traductor();" /></td>
 </tr>
 </table>
 <!-- Para esta funcion solo nesesito  1 dato.  -->
@@ -162,10 +160,10 @@ document.getElementById('EliminarPoC').style.display='block'; ">Marcar Proyecto 
 </center>
 </div>
 
-<div id="EliminarTraduc" style="display: none;">
+<div id="EliminarPoC" style="display: none;">
   <p>7  </p>
   <p>
-    
+
     <input type="button" value="Eliminar" onclick="eliminar_traductor();" />
   </p>
   </br> 
