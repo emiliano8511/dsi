@@ -19,53 +19,57 @@
 </head>
 <body>
 
-<input type='button' value='Salir' onclick="logout();"/></br>
-
-<ul class="navbar">
-  <li><a href="indice.html">Página principal</a>
-  <li><a href="meditaciones.html">Meditaciones</a>
-  <li><a href="ciudad.html">Mi ciudad</a>
-  <li><a href="enlaces.html">Enlaces</a>
+<ul class="navbar">	
+	<div id='menucliente' style="display: none;">
+		<li><a href="#" onclick="ocultar_todo();document.getElementById('holacliente').style.display = 'block';">Menu Cliente:</a>
+		<li><a href='#' onclick="ocultar_todo();document.getElementById('crear_proyecto').style.display = 'block';">Crear Proyecto</a>
+		<li><a href='#' onclick="ocultar_todo();document.getElementById('ver_proyectos_cliente').style.display = 'block';ver_historial_cliente();">Ver historial de solicitudes</a>
+		<li><a href='#' onclick="logout();">Salir</a>
+	</div>
+	
+	
+	<div id='menutraductor' style="display: none;">
+		<li><a href="#" onclick="ocultar_todo();document.getElementById('holatraductor').style.display = 'block';">Menu Traductor:</a>
+		<li><a href='#'>Cotizar Solicitudes</a>
+		<li><a href='#'>Ordenes de trabajo</a>
+		<li><a href='#'>Modificar disponibilidad horaria</a>
+		<li><a href='#'>Ver registro de trabajos</a>							
+		<li><a href='#' onclick="logout();">Salir</a>
+	</div>
+	
+	
+	<div id='menuadmin' style="display: none;">
+		<li><a href="#" onclick="ocultar_todo();document.getElementById('holaadmin').style.display = 'block';">Menu Administrador:</a>
+		<li><a href='#' onClick="ocultar_todo();document.getElementById('IngresarUsuarios').style.display='block';">Ingresar o eliminar un Usuario</a>
+		<li><a href='#'onClick="ocultar_todo(); document.getElementById('EliminarPoC').style.display='block'; ">Marcar Proyecto como Realizado</a>
+		<li><a href='#' onClick="ocultar_todo(); document.getElementById('EliminarPoC').style.display='block'; ">Marcar Proyecto como Realizado</a>
+		<li><a href='#'>Editar un proyecto marcándolo como pagado (clientes)</a>
+		<li><a href='#'>Editar un proyecto marcándolo como pagado (traductores.)</a>
+		<li><a href='#'>Ver registros de los trabajos</a>		        		  
+		<li><a href='#' onclick="logout();">Salir</a>
+	</div>
 </ul>
 
-<table border="1" width="100%">
-	<tr>
-		<td align="center">Menu</td>
-	</tr>
-</table>
-
-<table border="1" width="100%">
-	<tr>
-		<td align="center">Clientes</td>
-		<td align="center">Traductor</td>
-		<td align="center">Administrador</td>
-	</tr>
-	<tr>
-		<td align="center">
-			<input type='button' value='Crear Proyecto' onclick="ocultar_todo();document.getElementById('crear_proyecto').style.display = 'block';"/></br>
-			<input type='button' value='Ver historial de solicitudes' onclick="ocultar_todo();document.getElementById('ver_proyectos_cliente').style.display = 'block';ver_historial_cliente();"/></br>
-		</td>
-		<td align="center">
-			<input type='button' value='Cotizar Solicitudes'/></br>
-			<input type='button' value='Ordenes de trabajo'/></br>
-			<input type='button' value='Modificar disponibilidad horaria'/></br>
-			<input type='button' value='Ver registro de trabajos'/></br>	
-		</td>
-		<td align="center">
-        <!-- COdigo con emiliano  -->
-			<input type='button' value='Ingresar o eliminar un Usuario' onClick="ocultar_todo();document.getElementById('IngresarUsuarios').style.display='block';" /></br>
-        <!-- COdigo con lilo  -->  
-			<input type='button' value=' Marcar Proyecto como Realizado.' onClick="ocultar_todo(); document.getElementById('EliminarPoC').style.display='block'; "/></br>
-
-            <input type='button' value=' Marcar Proyecto como Realizado.' onClick="ocultar_todo(); document.getElementById('EliminarPoC').style.display='block'; "/></br>
-
-		  <input type='button' value='Editar un proyecto marcándolo como pagado (clientes)'/></br>
-			<input type='button' value='Editar un proyecto marcándolo como pagado (traductores.)'/></br>			
-			<input type='button' value='Ver registros de los trabajos.'/></br>
-		</td>
-	</tr>
-</table>
 </br></br>
+
+<div id="holacliente" style="display: none;">
+<center>
+<h1>Hola Cliente</h1>
+</center>
+</div>
+
+<div id="holatraductor" style="display: none;">
+<center>
+<h1>Hola Traductor</h1>
+</center>
+</div>
+
+<div id="holaadmin" style="display: none;">
+<center>
+<h1>Hola Admin</h1>
+</center>
+</div>
+
 
 <!--   Orden de trabajo por parte del cliente -->								
 <div id="crear_proyecto" style="display: none;">	
