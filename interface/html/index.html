@@ -37,15 +37,19 @@
 		<li><a href='#' onclick="logout();">Salir</a>
 	</div>
 	
-	
-	<div id='menuadmin' style="display: none;">
+<!--  -->	
+
+ <div id='menuadmin' style="display: none;">   								
+
 		<li><a href="#" onclick="ocultar_todo();document.getElementById('holaadmin').style.display = 'block';">Menu Administrador:</a>
-		<li><a href='#' onClick="ocultar_todo();document.getElementById('IngresarUsuarios').style.display='block';">Ingresar o eliminar un Usuario</a>
-		<li><a href='#'onClick="ocultar_todo(); document.getElementById('EliminarPoC').style.display='block'; ">Marcar Proyecto como Realizado</a>
-		<li><a href='#' onClick="ocultar_todo(); document.getElementById('EliminarPoC').style.display='block'; ">Marcar Proyecto como Realizado</a>
-		<li><a href='#'>Editar un proyecto marcándolo como pagado (clientes)</a>
-		<li><a href='#'>Editar un proyecto marcándolo como pagado (traductores.)</a>
-		<li><a href='#'>Ver registros de los trabajos</a>		        		  
+		<li><a href='#' onClick="ocultar_todo();document.getElementById('IngresarUsuarios').style.display='block';">Ingresar Traductor </a>
+		<li><a href='#'onClick="ocultar_todo(); document.getElementById('EliminarTraduc').style.display='block'; "> Eliminar Traductor</a>
+		<li><a href='#' onClick="ocultar_todo();
+        
+document.getElementById('EliminarPoC').style.display='block'; ">Marcar Proyecto como Realizado</a>
+		<li><a href='#'>Marcar un proyecto pagado por Clientes</a>
+		<li><a href='#'>Marcar un proyecto pagado por Clientes Proyecto Pagado a Traductores</a>
+		<li><a href='#'>Ver Registros</a>		        		  
 		<li><a href='#' onclick="logout();">Salir</a>
 	</div>
 </ul>
@@ -124,7 +128,7 @@
 <div id="IngresarUsuarios" style="display: none;">
 
 
-<!-- COdigo con emiliano  -->
+<!-- Ingresando traductores  -->
 <center>
 <table align="center">
 <tr>
@@ -140,7 +144,17 @@
 <td>Clave:</td><td><input type="password" id="ClaveTraductor" /><td> 
 </tr>
 <tr>
-<td align="right"><input type="button" value="Ingresar" onclick="ingresar_traductor();" /></td><td><input type="button" value="Eliminar" onclick="eliminar_traductor();" /><td> 
+<td>¿Privilegios de adminitrador ?:</td><td> <form id=checkbox>
+<select name=mytextarea>
+<option name=TRUE value=TRUE> Si </option>
+<option name=FALSE value=FALSE> No </option>
+
+</select>
+
+</form><td> 
+</tr>
+<tr>
+<td align="right"><input type="button" value="Ingresar" onclick="ingresar_traductor();" /></td><td> 
 </tr>
 </table>
 <!-- Para esta funcion solo nesesito  1 dato.  -->
@@ -148,10 +162,10 @@
 </center>
 </div>
 
-<div id="EliminarPoC" style="display: none;">
+<div id="EliminarTraduc" style="display: none;">
   <p>7  </p>
   <p>
-
+    
     <input type="button" value="Eliminar" onclick="eliminar_traductor();" />
   </p>
   </br> 
