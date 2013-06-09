@@ -24,8 +24,9 @@ precio integer,
 id_traductor integer,
 estado character varying,
 id_categoria integer,
-pagado boolean,
-id_corrector integer
+id_corrector integer,
+pagado_clientes boolean,
+pagado_traductores boolean
 );
 
 CREATE TABLE estado
