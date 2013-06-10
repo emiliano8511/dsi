@@ -12,6 +12,15 @@ session_start();
 	}		
 	pg_free_result($consulta);	
 	
+	$consulta="SELECT id,nombre FROM estado";
+	$estado[0] = '';	
+	$result = pg_query($consulta) or die ('Consulta fallida: ' . pg_last_error());
+	while ($line = pg_fetch_array($result, null, PGSQL_ASSOC))
+	{
+		$estado[$line["id"]] = $line["nombre"];				
+	}		
+	pg_free_result($consulta);	
+	
 	$consulta="SELECT * FROM proyecto where correo_cliente='".$_SESSION['mail']."'";		
 	$result = pg_query($consulta) or die ('Consulta fallida: ' . pg_last_error());
 	while ($line = pg_fetch_array($result, null, PGSQL_ASSOC))
@@ -26,12 +35,16 @@ session_start();
 		{
 			if ($line['estado'] == 2 )
 			{
-				$line['id'] = "<img src='../images/si.png' height='20' title='aceptar' onclick='alert(".$line['id'].");'><img src='../images/no.png' height='20' title='rechazar' onclick='alert(".$line['id'].");'>";				
+				$line['id'] = "<img src='../images/si.png' height='20' title='Aceptar' onclick='aceptarcotizacion(".$line['id'].");'><img src='../images/no.png' height='20' title='Rechazar' onclick='rechazarcotizacion(".$line['id'].");'>";				
 			}
-			
-			
-			
-			$mensaje = $mensaje.'<tag>'.$line['nombre_documento'].'<tag>'.$idioma[$line['idioma_original']].'<tag>'.$idioma[$line['idioma_destino']].'<tag>'.$line['precio'].'<tag>'.$line['estado'].'<tag>'.$line['id'];
+			else if ($line['estado'] == 6 )
+			{
+				$line['id'] = "<img src='../images/bajar.png' height='20' title='Descargar' onclick='alert(".$line['id'].");'>";				
+			}
+			else
+				$line['id'] = '';
+								
+			$mensaje = $mensaje.'<tag>'.$line['nombre_documento'].'<tag>'.$idioma[$line['idioma_original']].'<tag>'.$idioma[$line['idioma_destino']].'<tag>'.$line['precio'].'<tag>'.$estado[$line['estado']].'<tag>'.$line['id'];
 			$i = $i +1;
 		}
 		echo '<tag>'.$i.$mensaje;
