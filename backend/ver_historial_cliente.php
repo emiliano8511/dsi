@@ -24,6 +24,13 @@ session_start();
 		$mensaje = '';
 		while ($line = pg_fetch_array($result2, null, PGSQL_ASSOC))
 		{
+			if ($line['estado'] == 2 )
+			{
+				$line['id'] = "<img src='../images/si.png' height='20' title='aceptar' onclick='alert(".$line['id'].");'><img src='../images/no.png' height='20' title='rechazar' onclick='alert(".$line['id'].");'>";				
+			}
+			
+			
+			
 			$mensaje = $mensaje.'<tag>'.$line['nombre_documento'].'<tag>'.$idioma[$line['idioma_original']].'<tag>'.$idioma[$line['idioma_destino']].'<tag>'.$line['precio'].'<tag>'.$line['estado'].'<tag>'.$line['id'];
 			$i = $i +1;
 		}
