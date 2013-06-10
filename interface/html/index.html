@@ -12,7 +12,7 @@
 	<script src="../scripts/orden_trabajo.js" type="text/javascript"></script>
     <script src="../scripts/ingresotraduc.js" type="text/javascript"></script>
     <script src="../scripts/borrartraduc.js" type="text/javascript"></script>
-	
+	<script src="../scripts/doc_impagos.js" type="text/javascript"></script>
 	
 	
 	
@@ -47,11 +47,14 @@
         
 		<li><a href='#' onClick="ocultar_todo(); document.getElementById('ProyectoRealizado').style.display='block'; ">Marcar Proyecto como Realizado</a>
         
-        <li><a href='#' onClick="ocultar_todo();document.getElementById('PagadoClientes').style.display='block';"> Marcar Proyecto pagado por clientes</a>
+        <li><a href='#' onClick="ocultar_todo();document.getElementById('PagadoClientes').style.display='block';"> Marcar documento pagado por clientes</a>
         
-
-		<li><a href='#'>Marcar un proyecto pagado por Clientes Proyecto Pagado a Traductores</a>
-		<li><a href='#'>Ver Registros</a>		        		  
+        <li><a href='#' onClick="ocultar_todo();document.getElementById('PagadoTraductores').style.display='block';"> Marcar Documento pagado a Traductores </a>
+        
+  <li><a href='#' onClick="ocultar_todo();document.getElementById('Resgistro').style.display='block';"> Ver Registros </a>       
+        
+		        		  
+        
 		<li><a href='#' onclick="logout();">Salir</a>
 	</div>
 </ul>
@@ -145,15 +148,7 @@
 <tr>
 <td>Clave:</td><td><input type="password" id="ClaveTraductor" /><td> 
 </tr>
-<tr>
-<td>¿Privilegios de adminitrador ?:</td><td> <form id=checkbox>
-<select name=mytextarea>
-<option name=FALSE value=FALSE> No </option>
-<option name=TRUE value=TRUE> Si </option>
 
-</select>
-
-</form><td> 
 <td>Privilegios de Administrador </td><td>
 <SELECT id="valoradmin" SIZE=1 > 
 <OPTION VALUE=true >SI</OPTION>
@@ -187,16 +182,39 @@
 <td>Ingrese el correo del cliente:</td><td><input type="text" id="correocliente" /><td>
 </tr>
 <tr>
-<td align="right"><input type="button" value="Ver documentos Pendiendes" onclick="ingresar_traductor();" /></td>
+<td align="right"><input type="button" value="Ver documentos Pendiendes" onclick="documentos_impagos();" /></td>
 </tr>
 </table>
-    
-
-    
-    	
+           	
 </div>
 
+<!--  MarcarProyectoPagadoPara Traductores -->								
+<div id="PagadoTraductores" style="display: none;">	
 
+<center>
+<table align="center">
+<tr>
+<td>Ingrese el codigo del documento </td><td><input type="text" id="doc traductor" /><td>
+</tr>
+<tr>
+<td align="right"><input type="button" value="Marcar como Pagado" onclick="documentos_impagos();" /></td>
+</tr>
+</table>
+ </center>
+           	
+</div>
+
+<div id="Registro" style="display: none;">	
+
+
+<tr>
+<td> Historico de los proyectos 
+</tr>
+<tr>
+</tr>
+
+           	
+</div>
 
 
 
