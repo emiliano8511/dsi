@@ -43,11 +43,13 @@
 
 		<li><a href="#" onclick="ocultar_todo();document.getElementById('holaadmin').style.display = 'block';">Menu Administrador:</a>
 		<li><a href='#' onClick="ocultar_todo();document.getElementById('IngresarUsuarios').style.display='block';">Ingresar Traductor </a>
-		<li><a href='#'onClick="ocultar_todo(); document.getElementById('EliminarTraduc').style.display='block'; "> Eliminar Traductor</a>
-		<li><a href='#' onClick="ocultar_todo();
+        <li><a href='#'onClick="ocultar_todo(); document.getElementById('EliminarTraduc').style.display='block'; eliminar_traductor();" > Eliminar Traductor</a>
         
-document.getElementById('EliminarPoC').style.display='block'; ">Marcar Proyecto como Realizado</a>
-		<li><a href='#'>Marcar un proyecto pagado por Clientes</a>
+		<li><a href='#' onClick="ocultar_todo(); document.getElementById('ProyectoRealizado').style.display='block'; ">Marcar Proyecto como Realizado</a>
+        
+        <li><a href='#' onClick="ocultar_todo();document.getElementById('PagadoClientes').style.display='block';"> Marcar Proyecto pagado por clientes</a>
+        
+
 		<li><a href='#'>Marcar un proyecto pagado por Clientes Proyecto Pagado a Traductores</a>
 		<li><a href='#'>Ver Registros</a>		        		  
 		<li><a href='#' onclick="logout();">Salir</a>
@@ -152,9 +154,13 @@ document.getElementById('EliminarPoC').style.display='block'; ">Marcar Proyecto 
 </select>
 
 </form><td> 
+<td>Privilegios de Administrador </td><td>
+<SELECT id="valoradmin" SIZE=1 > 
+<OPTION VALUE=true >SI</OPTION>
+<OPTION VALUE=false >NO</OPTION>
 </tr>
 <tr>
-<td align="right"><input type="button" value="Ingresar" onclick="ingresar_traductor();" /></td><td> 
+<td align="right"><input type="button" value="Ingresar" onclick="ingresar_traductor();" /></td>
 </tr>
 </table>
 <!-- Para esta funcion solo nesesito  1 dato.  -->
@@ -162,15 +168,30 @@ document.getElementById('EliminarPoC').style.display='block'; ">Marcar Proyecto 
 </center>
 </div>
 
-<div id="EliminarTraduc" style="display: none;">
-  <p>7  </p>
-  <p>
-    
-    <input type="button" value="Eliminar" onclick="eliminar_traductor();" />
-  </p>
-  </br> 
 
+<!--   Eliminar proyecto -->								
+<div id="EliminarTraduc" style="display: none;">	
+	<center>
+		Traductores</br></br>		
+		<div id="traductor"></div>
+	</center>
+    
+    	
 </div>
+
+<!--  MarcarProyectoPagadoPara clientes -->								
+<div id="PagadoClientes" style="display: none;">	
+	<center>
+		Ping Pong </br></br>		
+		<div id="traductor"></div>
+	</center>
+    
+    	
+</div>
+
+
+
+
 
 </body>
 </html>

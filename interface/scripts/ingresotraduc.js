@@ -4,20 +4,30 @@ function ingresar_traductor()
 	var rut;
 	var correo;
 	var clave;
+	var admin
 	var str;
-	
+
+	 
+	 
 	nombre = document.getElementById("NombreTraductor").value;
 	rut = document.getElementById("RutTraductor").value;
     correo = document.getElementById("MailTraductor").value;
 	clave = document.getElementById("ClaveTraductor").value;
+	admin =  document.getElementById("valoradmin").value;
+    
+
 	
 	if (nombre == "" || rut == "" || clave == "" || correo == "")
 	{
 		alert("Debe Ingresar todos los datos");
 	}
 	else
-	{	
-		str = nombre +  "<tag>" + rut +  "<tag>" + correo +  "<tag>" + clave;		
+	{
+		
+		
+		str = nombre +  "<tag>" + rut +  "<tag>" + correo +  "<tag>" + clave +  "<tag>" + admin ;		
+					
+	
 		
 		var xmlhttp;
 		if (window.XMLHttpRequest)
