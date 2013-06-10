@@ -12,6 +12,7 @@
 	<script src="../scripts/orden_trabajo.js" type="text/javascript"></script>
     <script src="../scripts/ingresotraduc.js" type="text/javascript"></script>
     <script src="../scripts/borrartraduc.js" type="text/javascript"></script>
+	<script src="../scripts/traductor.js" type="text/javascript"></script>
 	
 	
 	
@@ -30,7 +31,7 @@
 	
 	<div id='menutraductor' style="display: none;">
 		<li><a href="#" onclick="ocultar_todo();document.getElementById('holatraductor').style.display = 'block';">Menu Traductor:</a>
-		<li><a href='#'>Cotizar Solicitudes</a>
+		<li><a href='#' onclick="ocultar_todo();document.getElementById('cotizar').style.display = 'block';mostrarcotizaciones();">Cotizar Solicitudes</a>
 		<li><a href='#'>Ordenes de trabajo</a>
 		<li><a href='#'>Modificar disponibilidad horaria</a>
 		<li><a href='#'>Ver registro de trabajos</a>							
@@ -75,6 +76,16 @@
 <h1>Hola Admin</h1>
 </center>
 </div>
+
+<div id="cotizar" style="display: none;">
+<center>
+Cotizar proyectos
+<div id="muestracotizaciones">
+</div>
+</center>
+</div>
+
+
 
 
 <!--   Orden de trabajo por parte del cliente -->								

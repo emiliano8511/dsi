@@ -8,4 +8,5 @@ function ocultar_todo()
 	document.getElementById('holacliente').style.display = 'none';
 	document.getElementById('holatraductor').style.display = 'none';				
 	document.getElementById('holaadmin').style.display = 'none';
+	document.getElementById('cotizar').style.display = 'none';
 }

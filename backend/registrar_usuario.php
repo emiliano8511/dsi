@@ -23,6 +23,7 @@ if ($filas == 0)
 	$_SESSION['nombre'] = $nombre;	
 	$_SESSION['usuario'] = 'cliente';		
 	mkdir("../usuarios/".$mail);
+	mkdir("../usuarios/".$mail."/terminados/");
 }
 else
 {
