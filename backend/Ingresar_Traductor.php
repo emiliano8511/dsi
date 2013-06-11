@@ -5,7 +5,7 @@ session_start();
 $q=$_POST["q"];
 $datos = explode("<tag>",$q);
 
-$nombre = $datos[0];
+$nombre = strtolower($datos[0]);
 $rut = $datos[1];
 $mail = $datos[2];
 $pass = $datos[3];

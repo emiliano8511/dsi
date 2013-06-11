@@ -1,24 +1,27 @@
-function eliminar_traductor()
+function agregar_idioma()
 {
-	var nombre;
-	var rut;
+	var idioma;
+
 	var str;
+	
 
 	 
-	nombre = document.getElementById("NomTrad").value;
-	rut = document.getElementById("RutTrad").value;
-    
+	idioma = document.getElementById("idioma").value;
+
+  
 	
-    	
-	if (nombre == "" || rut == "")
+   
+	if (idioma == "")
 	{
-		alert("Debe Ingresar ambos datos");
+		alert("Debe ingresar el idioma");
 	}
 	else
 	{
+		 
 			
-		str = nombre +  "<tag>" + rut ;		
-					
+		str = idioma +  "<tag>" ;		
+			
+			
 		var xmlhttp;
 		if (window.XMLHttpRequest)
 		{// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -36,7 +39,7 @@ function eliminar_traductor()
 				alert (r);
 			}
 		}
-		xmlhttp.open("POST","../../backend/Borrar_Traductor.php",true);	
+		xmlhttp.open("POST","../../backend/Agregar_idioma.php",true);	
 		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xmlhttp.setRequestHeader("Content-type", "text/html; charset=iso-8859-1");
 		str = "q="+str;

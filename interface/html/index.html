@@ -13,10 +13,9 @@
     <script src="../scripts/ingresotraduc.js" type="text/javascript"></script>
     <script src="../scripts/borrartraduc.js" type="text/javascript"></script>
 	<script src="../scripts/traductor.js" type="text/javascript"></script>
-	
-	
-	
-	
+	<script src="../scripts/doc_impagos.js" type="text/javascript"></script>
+    <script src="../scripts/idiom.js" type="text/javascript"></script>
+    <script src="../scripts/Borrar_idioma.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -44,15 +43,26 @@
 
 		<li><a href="#" onclick="ocultar_todo();document.getElementById('holaadmin').style.display = 'block';">Menu Administrador:</a>
 		<li><a href='#' onClick="ocultar_todo();document.getElementById('IngresarUsuarios').style.display='block';">Ingresar Traductor </a>
-        <li><a href='#'onClick="ocultar_todo(); document.getElementById('EliminarTraduc').style.display='block'; eliminar_traductor();" > Eliminar Traductor</a>
+        <li><a href='#'onClick="ocultar_todo();document.getElementById('EliminarTraduc').style.display='block';" > Eliminar Traductor</a>
         
 		<li><a href='#' onClick="ocultar_todo(); document.getElementById('ProyectoRealizado').style.display='block'; ">Marcar Proyecto como Realizado</a>
         
-        <li><a href='#' onClick="ocultar_todo();document.getElementById('PagadoClientes').style.display='block';"> Marcar Proyecto pagado por clientes</a>
+        <li><a href='#' onClick="ocultar_todo();document.getElementById('PagadoClientes').style.display='block';"> Marcar documento pagado por clientes</a>
         
+        <li><a href='#' onClick="ocultar_todo();document.getElementById('PagadoTraductores').style.display='block';"> Marcar Documento pagado a Traductores </a>
 
-		<li><a href='#'>Marcar un proyecto pagado por Clientes Proyecto Pagado a Traductores</a>
-		<li><a href='#'>Ver Registros</a>		        		  
+
+  <li><a href='#' onClick="ocultar_todo();document.getElementById('idiomain').style.display='block';"> Agregar Idioma </a>   
+  <li><a href='#' onClick="ocultar_todo();document.getElementById('idiomaout').style.display='block';"> Eliminar Idioma </a>
+  
+        
+  <li><a href='#' onClick="ocultar_todo();document.getElementById('Resgistro').style.display='block';"> Ver Registros </a>
+       
+  
+        
+        
+		        		  
+        
 		<li><a href='#' onclick="logout();">Salir</a>
 	</div>
 </ul>
@@ -138,10 +148,8 @@ Cotizar proyectos
     	
 </div>
 
-<div id="IngresarUsuarios" style="display: none;">
-
-
 <!-- Ingresando traductores  -->
+<div id="IngresarUsuarios" style="display: none;">
 <center>
 <table align="center">
 <tr>
@@ -156,15 +164,7 @@ Cotizar proyectos
 <tr>
 <td>Clave:</td><td><input type="password" id="ClaveTraductor" /><td> 
 </tr>
-<tr>
-<td>¿Privilegios de adminitrador ?:</td><td> <form id=checkbox>
-<select name=mytextarea>
-<option name=FALSE value=FALSE> No </option>
-<option name=TRUE value=TRUE> Si </option>
 
-</select>
-
-</form><td> 
 <td>Privilegios de Administrador </td><td>
 <SELECT id="valoradmin" SIZE=1 > 
 <OPTION VALUE=true >SI</OPTION>
@@ -183,10 +183,20 @@ Cotizar proyectos
 <!--   Eliminar proyecto -->								
 <div id="EliminarTraduc" style="display: none;">	
 	<center>
-		Traductores</br></br>		
-		<div id="traductor"></div>
-	</center>
-    
+<table align="center">
+<tr>
+<td>Nombre:</td><td><input type="text" id="NomTrad" /><td>
+</tr>
+<tr>
+<td>Rut:</td><td><input type="text" id="RutTrad" /><td> 
+</tr>
+<tr>
+<td align="right"><input type="button" value="Eliminar" onclick="eliminar_traductor();" /></td>
+ </tr>
+</table>
+
+
+</center>   
     	
 </div>
 
@@ -198,18 +208,72 @@ Cotizar proyectos
 <td>Ingrese el correo del cliente:</td><td><input type="text" id="correocliente" /><td>
 </tr>
 <tr>
-<td align="right"><input type="button" value="Ver documentos Pendiendes" onclick="ingresar_traductor();" /></td>
+<td align="right"><input type="button" value="Ver documentos Pendiendes" onclick="documentos_impagos();" /></td>
 </tr>
 </table>
-    
+           	
+</div>
 
-    
+<!--  MarcarProyectoPagadoPara Traductores -->								
+<div id="PagadoTraductores" style="display: none;">	
+
+<center>
+<table align="center">
+<tr>
+<td>Ingrese el codigo del documento </td><td><input type="text" id="doc traductor" /><td>
+</tr>
+<tr>
+<td align="right"><input type="button" value="Marcar como Pagado" onclick="documentos_impagos();" /></td>
+</tr>
+</table>
+ </center>
+           	
+</div>
+
+<div id="Registro" style="display: none;">	
+
+
+<tr>
+<td> Historico de los proyectos 
+</tr>
+<tr>
+</tr>
+
+           	
+</div>
+
+<!--   agregar Idioma -->								
+<div id="idiomain" style="display: none;">	
+	<center>
+<table align="center">
+<tr>
+<td>Que idioma desea agregar?:</td><td><input type="text" id="idioma" /><td>
+</tr>
+<tr>
+<td align="right"><input type="button" value="Agregar" onclick="agregar_idioma();" /></td>
+ </tr>
+</table>
+
+
+</center>   
     	
 </div>
 
+<div id="idiomaout" style="display: none;">	
+	<center>
+<table align="center">
+<tr>
+<td>Que idioma desea Eliminar?:</td><td><input type="text" id="idi" /><td>
+</tr>
+<tr>
+<td align="right"><input type="button" value="Eliminar" onclick="eliminar_idioma();" /></td>
+ </tr>
+</table>
 
 
-
+</center>   
+    	
+</div>
 
 </body>
 </html>
