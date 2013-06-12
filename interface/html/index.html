@@ -16,6 +16,7 @@
 	<script src="../scripts/doc_impagos.js" type="text/javascript"></script>
     <script src="../scripts/idiom.js" type="text/javascript"></script>
     <script src="../scripts/Borrar_idioma.js" type="text/javascript"></script>
+	<script src="../scripts/verregistrosporadmin.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -39,24 +40,16 @@
 	
 <!--  -->	
 
- <div id='menuadmin' style="display: none;">   								
-
+ <div id='menuadmin' style="display: block;">
 		<li><a href="#" onclick="ocultar_todo();document.getElementById('holaadmin').style.display = 'block';">Menu Administrador:</a>
 		<li><a href='#' onClick="ocultar_todo();document.getElementById('IngresarUsuarios').style.display='block';">Ingresar Traductor </a>
-        <li><a href='#'onClick="ocultar_todo();document.getElementById('EliminarTraduc').style.display='block';" > Eliminar Traductor</a>
-        
-		<li><a href='#' onClick="ocultar_todo(); document.getElementById('ProyectoRealizado').style.display='block'; ">Marcar Proyecto como Realizado</a>
-        
-        <li><a href='#' onClick="ocultar_todo();document.getElementById('PagadoClientes').style.display='block';"> Marcar documento pagado por clientes</a>
-        
+        <li><a href='#'onClick="ocultar_todo();document.getElementById('EliminarTraduc').style.display='block';" > Eliminar Traductor</a>        
+		<li><a href='#' onClick="ocultar_todo(); document.getElementById('ProyectoRealizado').style.display='block'; ">Marcar Proyecto como Realizado</a>        
+        <li><a href='#' onClick="ocultar_todo();document.getElementById('PagadoClientes').style.display='block';"> Marcar documento pagado por clientes</a>        
         <li><a href='#' onClick="ocultar_todo();document.getElementById('PagadoTraductores').style.display='block';"> Marcar Documento pagado a Traductores </a>
-
-
-  <li><a href='#' onClick="ocultar_todo();document.getElementById('idiomain').style.display='block';"> Agregar Idioma </a>   
-  <li><a href='#' onClick="ocultar_todo();document.getElementById('idiomaout').style.display='block';"> Eliminar Idioma </a>
-  
-        
-  <li><a href='#' onClick="ocultar_todo();document.getElementById('Resgistro').style.display='block';"> Ver Registros </a>
+		<li><a href='#' onClick="ocultar_todo();document.getElementById('idiomain').style.display='block';"> Agregar Idioma </a>   
+		<li><a href='#' onClick="ocultar_todo();document.getElementById('idiomaout').style.display='block';"> Eliminar Idioma </a>        
+		<li><a href='#' onClick="ocultar_todo();document.getElementById('Registro').style.display='block';ver_registrosdedocumentos();"> Ver Registros </a>
        
   
         
@@ -231,15 +224,11 @@ Cotizar proyectos
 </div>
 
 <div id="Registro" style="display: none;">	
+Registro cliente
 
-
-<tr>
-<td> Historico de los proyectos 
-</tr>
-<tr>
-</tr>
-
-           	
+<div id="verelregistro">
+</div>
+      	
 </div>
 
 <!--   agregar Idioma -->								
