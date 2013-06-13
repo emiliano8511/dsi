@@ -17,6 +17,9 @@
     <script src="../scripts/idiom.js" type="text/javascript"></script>
     <script src="../scripts/Borrar_idioma.js" type="text/javascript"></script>
 	<script src="../scripts/verregistrosporadmin.js" type="text/javascript"></script>
+    <script src="../scripts/realizado.js" type="text/javascript"></script>
+    <script src="../scripts/cliente_paga.js" type="text/javascript"></script>
+    
 </head>
 <body>
 
@@ -193,15 +196,31 @@ Cotizar proyectos
     	
 </div>
 
+
+<!--  MarcarProyectoRealizado clientes -->								
+<div id="ProyectoRealizado" style="display: none;">	
+
+<table align="center">
+<tr>
+
+<td>Ingrese id del documento :</td><td><input type="text" id="iddocumento" /><td>
+</tr>
+<tr>
+<td align="right"><input type="button" value="Marcar como Realizado" onclick="marcar_realizado();" /></td>
+</tr>
+</table>
+           	
+</div>
+
 <!--  MarcarProyectoPagadoPara clientes -->								
 <div id="PagadoClientes" style="display: none;">	
 
 <table align="center">
 <tr>
-<td>Ingrese el correo del cliente:</td><td><input type="text" id="correocliente" /><td>
+<td>Ingrese ID del documento:</td><td><input type="text" id="iddocument" /><td>
 </tr>
 <tr>
-<td align="right"><input type="button" value="Ver documentos Pendiendes" onclick="documentos_impagos();" /></td>
+<td align="right"><input type="button" value="Marcar Pagado " onclick="pagar_clientes();" /></td>
 </tr>
 </table>
            	
@@ -213,10 +232,10 @@ Cotizar proyectos
 <center>
 <table align="center">
 <tr>
-<td>Ingrese el codigo del documento </td><td><input type="text" id="doc traductor" /><td>
+<td>Ingrese el ID del documento </td><td><input type="text" id="doctraductor" /><td>
 </tr>
 <tr>
-<td align="right"><input type="button" value="Marcar como Pagado" onclick="documentos_impagos();" /></td>
+<td align="right"><input type="button" value="Marcar Pagado" onclick="pagar_traductores();" /></td>
 </tr>
 </table>
  </center>
