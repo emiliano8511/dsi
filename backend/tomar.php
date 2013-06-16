@@ -17,6 +17,7 @@
 	$result = pg_query($sql) or die ('Consulta fallida: ' . pg_last_error());
 	while ($row = pg_fetch_array($result, null, PGSQL_ASSOC))			
 	{
+		$id=$row['id'];
 		$nombre=$row['nombre_documento'];
 		$proyec_aux=$row['id'];
 		$i_origen=$row['idioma_original'];
@@ -32,5 +33,9 @@
 		
 		echo "</tr>";
 	}
+	
+	pg_exec("UPDATE documentos SET estado=3 WHERE id='".$id."';");	
+	$consulta=pg_exec("SELECT * FROM proyecto");
+	
 		echo "</table>";
 ?>
