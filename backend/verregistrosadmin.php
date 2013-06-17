@@ -5,7 +5,7 @@
 	echo '<tr><td>Nombre Documento</td><td>Correo Cliente</td><td>Traductor</td><td>Corrector</td><td>Estado</td><td>Precio</td><td>Opcion</td></tr>';
 	echo '<tr>';
 	
-	$consulta= "SELECT documentos.id as id,documentos.nombre_documento as nombre, proyecto.correo_cliente as correo, documentos.id_traductor as traduct, documentos.id_corrector as correct, documentos.estado as estado, documentos.precio as precio FROM documentos,proyecto, cliente, traductor Where documentos.id_proyecto = proyecto.id_proyecto";
+	$consulta= "SELECT documentos.id as id,documentos.nombre_documento as nombre, proyecto.correo_cliente as correo, documentos.id_traductor as traduct, documentos.id_corrector as correct, documentos.estado as estado, documentos.precio as precio FROM documentos,proyecto Where documentos.id_proyecto = proyecto.id_proyecto";
 	$result = pg_query($consulta) or die ('Consulta fallida: ' . pg_last_error());	
 	while ($linea = pg_fetch_array($result, null, PGSQL_ASSOC))			
 	{		

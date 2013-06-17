@@ -11,9 +11,16 @@ function registrar_usuario()
 	telefono = document.getElementById("telefono").value;
 	correo = document.getElementById("correo").value;
 	
-	if (nombre == "" || clave == "" || telefono == "" || correo == "")
+	if (nombre == "" || clave == "" || telefono == "" || correo == "" || validarEmail(document.getElementById('correo').value))
 	{
-		alert("Debe Ingresar todos los datos");
+		if (validarEmail(document.getElementById('correo').value))
+		{
+			alert("Correo Invalido");
+		}
+		else
+		{
+			alert("Debe Ingresar todos los datos");
+		}
 	}
 	else
 	{	
@@ -61,10 +68,17 @@ function logear_usuario()
 		
 	clave = document.getElementById("pass").value;	
 	correo = document.getElementById("correo").value;
-	
-	if (clave == "" || correo == "")
+				
+	if (clave == "" || correo == "" || validarEmail(document.getElementById('correo').value))
 	{
-		alert("Debe Ingresar todos los datos");
+		if (validarEmail(document.getElementById('correo').value))
+		{
+			alert("Correo Invalido");
+		}
+		else
+		{
+			alert("Debe Ingresar todos los datos");
+		}
 	}
 	else
 	{	

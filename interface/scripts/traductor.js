@@ -25,7 +25,7 @@ function cotizarproyectos(id)
 {
 	var str;
 	str = "id_documento"+id;
-	valor = nombre = document.getElementById(str).value;
+	valor = document.getElementById(str).value;
 	var xmlhttp;
 	if (window.XMLHttpRequest)
 	{// code for IE7+, Firefox, Chrome, Opera, Safari
