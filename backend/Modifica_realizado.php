@@ -21,7 +21,7 @@ if ($filas == 0 )
 }else
 
 {
-pg_exec("UPDATE documentos SET  estado='6' WHERE id = '".$id."'");	
+pg_exec("UPDATE documentos SET  estado='7' WHERE id = '".$id."'");	
 
 	echo " Proyecto Marcado como Realizado";
 	
