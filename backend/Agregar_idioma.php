@@ -10,7 +10,7 @@ $idioma = strtoupper($datos[0]);
 
 $consulta=pg_exec("SELECT * FROM traductor WHERE mail = '".$idioma."'");
 $filas=pg_numrows($consulta);
-pg_free_result($consulta);					
+					
 
 if ($filas == 0 )
 {
@@ -28,3 +28,4 @@ else
 {
 	echo " Error : el Idioma ya existe";
 }
+pg_free_result($consulta);
